@@ -22,9 +22,24 @@ class Sudoku():
         return ('\n'.join([' '.join([str(number) for number in row]) for row in self.board]))
     
 
-    def solve(self) -> bool:
+    def solve(self) -> list | None:
         """
         Solves the sudoku.
+
+        Returns
+        -----
+        list: solution
+
+        None: sudoku doesn't have a solution
+        """
+        if self.find_solution():
+            return self.board
+        else:
+            return None
+
+    def find_solution(self) -> bool:
+        """"
+        Finds solution using backtracking algorithm.
 
         Returns
         -----
@@ -43,7 +58,7 @@ class Sudoku():
                             self.board[row][col] = num
                             
                             # Recursively try to solve next cell
-                            if self.solve():
+                            if self.find_solution():
                                 return True
                             
                             # Set value back to 0 (backtrack)
