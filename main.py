@@ -1,7 +1,7 @@
 from gui import Gui
 
 def main():
-    app = Gui(9)
+    app = Gui()
     app.mainloop()
 
 

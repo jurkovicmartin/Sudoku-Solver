@@ -2,7 +2,7 @@ import numpy as np
 
 class Sudoku():
     """
-    Board represents 2D matrix of sudoku values.
+    Board represents 2D matrix of sudoku values. Zeros represents empty cells.
 
     Parameters
     -----
@@ -36,6 +36,7 @@ class Sudoku():
             return self.board
         else:
             return None
+
 
     def find_solution(self) -> bool:
         """"

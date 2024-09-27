@@ -4,9 +4,9 @@ from tkinter import messagebox
 from sudoku import Sudoku
 
 class Gui(ctk.CTk):
-    def __init__(self, size):
+    def __init__(self):
         super().__init__()
-        self.size = size
+        self.size = 9
 
         self.geometry("600x600")
         self.title("Sudoku solver")
